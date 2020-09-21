@@ -13,9 +13,9 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'name'
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -42,10 +42,10 @@ describe('Pie Chart', () => {
 				source: 'name',
 				title: 'Name'
 			},
-			value: {
+			values: [{
 				source: 'quantity',
 				title: 'Quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -71,9 +71,9 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'name'
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		}, {
 			title: 'My chart title',
 			is3D: true,
@@ -109,10 +109,10 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'name'
 			},
-			value: {
+			values: [{
 				source: 'quantity',
 				valueMapper: v => v * 10
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -139,9 +139,9 @@ describe('Pie Chart', () => {
 				source: 'name',
 				valueMapper: s => s.toUpperCase()
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -168,10 +168,10 @@ describe('Pie Chart', () => {
 				source: 'name',
 				titleMapper: s => s.toUpperCase()
 			},
-			value: {
+			values: [{
 				source: 'quantity',
 				titleMapper: s => `The ${s}`
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -207,9 +207,9 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'type'
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -242,9 +242,9 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'sum'
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
@@ -273,9 +273,9 @@ describe('Pie Chart', () => {
 			label: {
 				source: 'name'
 			},
-			value: {
+			values: [{
 				source: 'quantity'
-			}
+			}]
 		});
 
 		pieChart.setData(sampleData);
