@@ -1,6 +1,6 @@
 # format-data-to-google-chart
 
-[![Build Status](https://travis-ci.org/janis-commerce/format-data-to-google-chart.svg?branch=master)](https://travis-ci.org/janis-commerce/format-data-to-google-chart)
+![Build Status](https://github.com/janis-commerce/format-data-to-google-chart/workflows/Build%20Status/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/janis-commerce/format-data-to-google-chart/badge.svg?branch=master)](https://coveralls.io/github/janis-commerce/format-data-to-google-chart?branch=master)
 [![npm version](https://badge.fury.io/js/%40janiscommerce%2Fformat-data-to-google-chart.svg)](https://www.npmjs.com/package/@janiscommerce/format-data-to-google-chart)
 
@@ -11,7 +11,6 @@ A package for format an array of object for create the data for many Google Char
 ```sh
 npm install @janiscommerce/format-data-to-google-chart
 ```
-
 
 ## Usage
 
@@ -37,14 +36,12 @@ const { data } = lineChart.parse();
 
 ## Label and Values items properties
 
-
 | Property    | type     | description                           | required |
 |-------------|----------|---------------------------------------|----------|
 | source      | string   | Field name for find value in the data | true     |
 | title       | string   | Title for view in chart labels        | false    |
 | valueMapper | function | function for modify value to show     | false    |
 | titleMapper | function | function for modify title to show     | false    |
-
 
 ## Examples
 
@@ -102,8 +99,6 @@ const { data } = lineChart.parse();
 ]
 ```
 
-
-
 ### PieChart
 
 ```js
@@ -126,7 +121,6 @@ const sampleData = [
 		quantity: 60
 	}
 ];
-
 
 const pieChart = new PieChart({
 	label: {
@@ -174,7 +168,6 @@ const sampleData = [
 		quantity: 60
 	}
 ];
-
 
 const tableChart = new TableChart({
 	values: [
