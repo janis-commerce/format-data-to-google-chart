@@ -190,3 +190,91 @@ const { data } = tableChart.parse();
 	[3, 'Third element', 60]
 ]
 ```
+
+### BarChart
+
+```js
+const { BarChart } = require('@janiscommerce/format-data-to-google-chart');
+
+const sampleData = [
+	{
+		id: 1,
+		name: 'First element',
+		quantity: 10,
+		color: 'red',
+		key: 'A1'
+	},
+	{
+		id: 2,
+		name: 'Second element',
+		quantity: 20,
+		color: 'blue',
+		key: 'A2'
+	},
+	{
+		id: 3,
+		name: 'Third element',
+		quantity: 60,
+		color: 'black',
+		key: 'A3'
+	}
+];
+```
+
+#### With label and value
+
+
+```js
+const barChart = new BarChart({
+	label: {
+		source: 'name'
+	},
+	values: [{ source: 'quantity' }]
+});
+
+barChart.setData(sampleData);
+
+const { data } = barChart.parse();
+
+// data preview
+
+[
+	['name', 'quantity'],
+	['First element', 10],
+	['Second element', 20],
+	['Third element', 60]
+]
+
+```
+
+#### With label, value, styles and annotation
+
+
+```js
+const barChart = new BarChart({
+	label: {
+		source: 'name'
+	},
+	values: [
+		{ source: 'quantity' },
+		{ source: 'color' },
+		{ source: 'key' }
+	]
+});
+
+barChart.setData(sampleData);
+
+const { data } = barChart.parse();
+
+// data preview
+
+[
+	['name', 'quantity', { role: 'style' }, { role: 'annotation' }],
+	['First element', 10, 'red', 'A1'],
+	['Second element', 20, 'blue', 'A2'],
+	['Third element', 60, 'black', 'A3']
+]
+
+```
+
+
