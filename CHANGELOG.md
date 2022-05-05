@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-05-05
+### Added
+- Add BarChart formatter
+
 ## [1.0.0] - 2020-10-08
 ### Added
 - Project inited
