@@ -21,23 +21,25 @@ const lineChart = new LineChart({
 	label: {
 		source: 'date'
 	},
-	values: [{
-		source: 'quantity'
-	}, {
-		source: 'double'
-	}]
+	values: [
+		{
+			source: 'quantity'
+		},
+		{
+			source: 'double'
+		}
+	]
 });
 
 lineChart.setData(sampleData);
 
 const { data } = lineChart.parse();
-
 ```
 
 ## Label and Values items properties
 
 | Property    | type     | description                           | required |
-|-------------|----------|---------------------------------------|----------|
+| ----------- | -------- | ------------------------------------- | -------- |
 | source      | string   | Field name for find value in the data | true     |
 | title       | string   | Title for view in chart labels        | false    |
 | valueMapper | function | function for modify value to show     | false    |
@@ -78,11 +80,14 @@ const lineChart = new LineChart({
 	label: {
 		source: 'date'
 	},
-	values: [{
-		source: 'quantity'
-	}, {
-		source: 'double'
-	}]
+	values: [
+		{
+			source: 'quantity'
+		},
+		{
+			source: 'double'
+		}
+	]
 });
 
 lineChart.setData(sampleData);
@@ -96,7 +101,7 @@ const { data } = lineChart.parse();
 	['2020-04-15', 10, 20],
 	['2020-04-16', 20, 40],
 	['2020-04-17', 60, 120]
-]
+];
 ```
 
 ### PieChart
@@ -126,9 +131,11 @@ const pieChart = new PieChart({
 	label: {
 		source: 'name'
 	},
-	values: [{
-		source: 'quantity'
-	}]
+	values: [
+		{
+			source: 'quantity'
+		}
+	]
 });
 
 pieChart.setData(sampleData);
@@ -142,9 +149,8 @@ const { data } = pieChart.parse();
 	['First element', 10],
 	['Second element', 20],
 	['Third element', 60]
-]
+];
 ```
-
 
 ### TableChart
 
@@ -170,11 +176,7 @@ const sampleData = [
 ];
 
 const tableChart = new TableChart({
-	values: [
-		{ source: 'id' },
-		{ source: 'name' },
-		{ source: 'quantity' }
-	]
+	values: [{ source: 'id' }, { source: 'name' }, { source: 'quantity' }]
 });
 
 tableChart.setData(sampleData);
@@ -188,7 +190,7 @@ const { data } = tableChart.parse();
 	[1, 'First element', 10],
 	[2, 'Second element', 20],
 	[3, 'Third element', 60]
-]
+];
 ```
 
 ### BarChart
@@ -223,7 +225,6 @@ const sampleData = [
 
 #### With label and value
 
-
 ```js
 const barChart = new BarChart({
 	label: {
@@ -243,23 +244,17 @@ const { data } = barChart.parse();
 	['First element', 10],
 	['Second element', 20],
 	['Third element', 60]
-]
-
+];
 ```
 
 #### With label, value, styles and annotation
-
 
 ```js
 const barChart = new BarChart({
 	label: {
 		source: 'name'
 	},
-	values: [
-		{ source: 'quantity' },
-		{ source: 'color' },
-		{ source: 'key' }
-	]
+	values: [{ source: 'quantity' }, { source: 'color' }, { source: 'key' }]
 });
 
 barChart.setData(sampleData);
@@ -273,8 +268,62 @@ const { data } = barChart.parse();
 	['First element', 10, 'red', 'A1'],
 	['Second element', 20, 'blue', 'A2'],
 	['Third element', 60, 'black', 'A3']
-]
-
+];
 ```
 
+### ColumnChart
 
+```js
+const { ColumnChart } = require('@janiscommerce/format-data-to-google-chart');
+
+const sampleData = [
+	{
+		id: 1,
+		date: '2020-04-15',
+		name: 'First element',
+		quantity: 10,
+		double: 20
+	},
+	{
+		id: 2,
+		date: '2020-04-16',
+		name: 'Second element',
+		quantity: 20,
+		double: 40
+	},
+	{
+		id: 3,
+		date: '2020-04-17',
+		name: 'Third element',
+		quantity: 60,
+		double: 120
+	}
+];
+
+const ColumnChart = new ColumnChart({
+	label: {
+		source: 'date'
+	},
+	values: [
+		{
+			source: 'quantity'
+		},
+		{
+			source: 'double'
+		}
+	]
+});
+
+ColumnChart.setData(sampleData);
+
+const { data } = ColumnChart.parse();
+
+// data preview
+
+[
+	['date', 'quantity', 'double'],
+	['2020-04-15', 10, 20],
+	['2020-04-16', 20, 40],
+	['2020-04-17', 60, 120]
+];
+```
