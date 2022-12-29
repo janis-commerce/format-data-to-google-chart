@@ -26,7 +26,14 @@ const lineChart = new LineChart({
 			source: 'quantity'
 		},
 		{
-			source: 'double'
+			source: 'quantityColor',
+			attributes: {
+				role: 'style'
+			}
+		},
+		{
+			source: 'base',
+			value: 5
 		}
 	]
 });
@@ -34,16 +41,27 @@ const lineChart = new LineChart({
 lineChart.setData(sampleData);
 
 const { data } = lineChart.parse();
+
+// data preview
+
+[
+	['date', 'quantity', { role: 'style' }, 'base'],
+	['2020-04-15', 10, 'blue', 5],
+	['2020-04-16', 20, '#b87333', 5],
+	['2020-04-17', 60, 'color: #e5e4e2', 5]
+];
 ```
 
 ## Label and Values items properties
 
-| Property    | type     | description                           | required |
-| ----------- | -------- | ------------------------------------- | -------- |
-| source      | string   | Field name for find value in the data | true     |
-| title       | string   | Title for view in chart labels        | false    |
-| valueMapper | function | function for modify value to show     | false    |
-| titleMapper | function | function for modify title to show     | false    |
+| Property    | type     | description                                                         | required |
+| ----------- | -------- | ------------------------------------------------------------------- | -------- |
+| source      | string   | Field name for find value in the data                               | true     |
+| value       | any      | Fixed value to use instead of the data                              | false    |
+| title       | string   | Title for view in chart labels                                      | false    |
+| valueMapper | function | Function for modify value to show                                   | false    |
+| titleMapper | function | Function for modify title to show                                   | false    |
+| attributes  | object   | Object for use as title for modify chart (styles, annotations, etc) | false    |
 
 ## Examples
 
@@ -254,7 +272,17 @@ const barChart = new BarChart({
 	label: {
 		source: 'name'
 	},
-	values: [{ source: 'quantity' }, { source: 'color' }, { source: 'key' }]
+	values: [
+		{ source: 'quantity' },
+		{
+			source: 'color',
+			attributes: { role: 'style' }
+		},
+		{
+			source: 'key',
+			attributes: { role: 'annotation' }
+		}
+	]
 });
 
 barChart.setData(sampleData);
@@ -282,6 +310,7 @@ const sampleData = [
 		date: '2020-04-15',
 		name: 'First element',
 		quantity: 10,
+		quantityColor: 'blue',
 		double: 20
 	},
 	{
@@ -289,6 +318,7 @@ const sampleData = [
 		date: '2020-04-16',
 		name: 'Second element',
 		quantity: 20,
+		quantityColor: '#b87333',
 		double: 40
 	},
 	{
@@ -296,6 +326,7 @@ const sampleData = [
 		date: '2020-04-17',
 		name: 'Third element',
 		quantity: 60,
+		quantityColor: 'color: #e5e4e2',
 		double: 120
 	}
 ];
@@ -307,6 +338,10 @@ const ColumnChart = new ColumnChart({
 	values: [
 		{
 			source: 'quantity'
+		},
+		{
+			source: 'quantityColor',
+			attributes: { role: 'style' }
 		},
 		{
 			source: 'double'
@@ -321,9 +356,9 @@ const { data } = ColumnChart.parse();
 // data preview
 
 [
-	['date', 'quantity', 'double'],
-	['2020-04-15', 10, 20],
-	['2020-04-16', 20, 40],
-	['2020-04-17', 60, 120]
+	['date', 'quantity', { role: 'style' }, 'double'],
+	['2020-04-15', 10, 'blue', 20],
+	['2020-04-16', 20, '#b87333', 40],
+	['2020-04-17', 60, 'color: #e5e4e2', 120]
 ];
 ```

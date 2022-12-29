@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 
-const sampleData = require('../sample-data/line-chart');
+const sampleData = require('../sample-data/column-chart');
 const { ColumnChart } = require('../../lib');
 
 describe('Column Chart', () => {
@@ -61,6 +61,54 @@ describe('Column Chart', () => {
 		]);
 	});
 
+	it('Should parse the data and options property with styles and annotation', () => {
+
+		const columnChart = new ColumnChart({
+			label: {
+				source: 'date'
+			},
+			values: [
+				{
+					source: 'quantity'
+				},
+				{
+					source: 'quantityColor',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'double'
+				},
+				{
+					source: 'doubleColor',
+					value: '#FAFAFA',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'dobleAnnotation',
+					attributes: {
+						role: 'annotation'
+					}
+				}
+			]
+		});
+
+		columnChart.setData(sampleData);
+
+		const {
+			data,
+			options
+		} = columnChart.parse();
+
+		assert.deepStrictEqual(options, {});
+
+		assert.deepStrictEqual(data, [
+			['date', 'quantity', { role: 'style' }, 'double', { role: 'style' }, { role: 'annotation' }],
+			['2020-04-15', 10, 'blue', 20, '#FAFAFA', 'A1'],
+			['2020-04-16', 20, '#b87333', 40, '#FAFAFA', 'A2'],
+			['2020-04-17', 60, 'color: #e5e4e2', 120, '#FAFAFA', 'A3']
+		]);
+	});
+
 	it('Should use label and values titles if present', () => {
 		const columnChart = new ColumnChart({
 			label: {
@@ -83,45 +131,6 @@ describe('Column Chart', () => {
 
 		assert.deepStrictEqual(data, [
 			['Date', 'Quantity'],
-			['2020-04-15', 10],
-			['2020-04-16', 20],
-			['2020-04-17', 60]
-		]);
-	});
-
-	it('Should pass-through pie chart properties', () => {
-		const columnChart = new ColumnChart(
-			{
-				label: {
-					source: 'date'
-				},
-				values: [
-					{
-						source: 'quantity'
-					}
-				]
-			},
-			{
-				title: 'My chart title',
-				curveType: 'function',
-				enableInteractivity: false,
-				pointsVisible: true
-			}
-		);
-
-		columnChart.setData(sampleData);
-
-		const { data, options } = columnChart.parse();
-
-		assert.deepStrictEqual(options, {
-			title: 'My chart title',
-			curveType: 'function',
-			enableInteractivity: false,
-			pointsVisible: true
-		});
-
-		assert.deepStrictEqual(data, [
-			['date', 'quantity'],
 			['2020-04-15', 10],
 			['2020-04-16', 20],
 			['2020-04-17', 60]
