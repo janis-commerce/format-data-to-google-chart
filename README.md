@@ -1,4 +1,4 @@
-# format-data-to-google-chart
+# Format data to google chart
 
 ![Build Status](https://github.com/janis-commerce/format-data-to-google-chart/workflows/Build%20Status/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/janis-commerce/format-data-to-google-chart/badge.svg?branch=master)](https://coveralls.io/github/janis-commerce/format-data-to-google-chart?branch=master)
