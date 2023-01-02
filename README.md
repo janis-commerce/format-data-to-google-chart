@@ -66,6 +66,8 @@ const { data } = lineChart.parse();
 ## Examples
 
 ### LineChart
+<details>
+	<summary> Usage </summary>
 
 ```js
 const { LineChart } = require('@janiscommerce/format-data-to-google-chart');
@@ -113,7 +115,6 @@ lineChart.setData(sampleData);
 const { data } = lineChart.parse();
 
 // data preview
-
 [
 	['date', 'quantity', 'double'],
 	['2020-04-15', 10, 20],
@@ -121,8 +122,12 @@ const { data } = lineChart.parse();
 	['2020-04-17', 60, 120]
 ];
 ```
+</details>
 
 ### PieChart
+
+<details>
+	<summary> Usage </summary>
 
 ```js
 const { PieChart } = require('@janiscommerce/format-data-to-google-chart');
@@ -161,7 +166,6 @@ pieChart.setData(sampleData);
 const { data } = pieChart.parse();
 
 // data preview
-
 [
 	['name', 'quantity'],
 	['First element', 10],
@@ -169,8 +173,11 @@ const { data } = pieChart.parse();
 	['Third element', 60]
 ];
 ```
+</details>
 
 ### TableChart
+<details>
+	<summary> Usage </summary>
 
 ```js
 const { TableChart } = require('@janiscommerce/format-data-to-google-chart');
@@ -202,7 +209,6 @@ tableChart.setData(sampleData);
 const { data } = tableChart.parse();
 
 // data preview
-
 [
 	[{ label: 'id' }, { label: 'name' }, { label: 'quantity' }],
 	[1, 'First element', 10],
@@ -210,8 +216,11 @@ const { data } = tableChart.parse();
 	[3, 'Third element', 60]
 ];
 ```
+</details>
 
 ### BarChart
+<details>
+	<summary> Usage </summary>
 
 ```js
 const { BarChart } = require('@janiscommerce/format-data-to-google-chart');
@@ -240,8 +249,10 @@ const sampleData = [
 	}
 ];
 ```
+</details>
 
-#### With label and value
+<details>
+	<summary> With label and value </summary>
 
 ```js
 const barChart = new BarChart({
@@ -256,7 +267,6 @@ barChart.setData(sampleData);
 const { data } = barChart.parse();
 
 // data preview
-
 [
 	['name', 'quantity'],
 	['First element', 10],
@@ -264,8 +274,10 @@ const { data } = barChart.parse();
 	['Third element', 60]
 ];
 ```
+</details>
 
-#### With label, value, styles and annotation
+<details>
+	<summary> With label, value, styles and annotation </summary>
 
 ```js
 const barChart = new BarChart({
@@ -290,7 +302,6 @@ barChart.setData(sampleData);
 const { data } = barChart.parse();
 
 // data preview
-
 [
 	['name', 'quantity', { role: 'style' }, { role: 'annotation' }],
 	['First element', 10, 'red', 'A1'],
@@ -298,8 +309,11 @@ const { data } = barChart.parse();
 	['Third element', 60, 'black', 'A3']
 ];
 ```
+</details>
 
 ### ColumnChart
+<details>
+	<summary> Usage </summary>
 
 ```js
 const { ColumnChart } = require('@janiscommerce/format-data-to-google-chart');
@@ -362,3 +376,4 @@ const { data } = ColumnChart.parse();
 	['2020-04-17', 60, 'color: #e5e4e2', 120]
 ];
 ```
+</details>
