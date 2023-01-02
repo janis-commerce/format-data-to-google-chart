@@ -43,8 +43,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		});
 
@@ -74,8 +80,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity', title: 'Quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		});
 
@@ -104,8 +116,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		}, {
 			title: 'Density of Precious Metals, in g/cm^3',
@@ -142,8 +160,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity', valueMapper: v => v * 10 },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		});
 
@@ -173,8 +197,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		});
 
@@ -204,8 +234,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			]
 		});
 
@@ -234,8 +270,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			],
 			sortData: (key1, key2) => key2.localeCompare(key1)
 		});
@@ -265,8 +307,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			],
 			sortData: (key1, key2) => key1.localeCompare(key2)
 		});
@@ -296,8 +344,14 @@ describe('Bar Chart', () => {
 			},
 			values: [
 				{ source: 'quantity' },
-				{ source: 'color' },
-				{ source: 'key' }
+				{
+					source: 'color',
+					attributes: { role: 'style' }
+				},
+				{
+					source: 'key',
+					attributes: { role: 'annotation' }
+				}
 			],
 			sortData: 'someInvalidSort'
 		});
